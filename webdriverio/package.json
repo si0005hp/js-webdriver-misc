@@ -1,0 +1,17 @@
+{
+  "name": "webdriverio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@wdio/cli": "^5.16.13"
+  },
+  "devDependencies": {
+    "@wdio/local-runner": "^5.16.13",
+    "@wdio/mocha-framework": "^5.16.13",
+    "@wdio/spec-reporter": "^5.16.11",
+    "@wdio/sync": "^5.16.14",
+    "chromedriver": "^78.0.1",
+    "wdio-chromedriver-service": "^5.0.2"
+  }
+}
