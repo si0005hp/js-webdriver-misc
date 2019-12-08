@@ -158,8 +158,19 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    // before: function (capabilities, specs) {
-    // },
+    before: function (_capabilities, _specs) {
+        const withNoImplicitTimeouts = function (func) {
+            browser.setTimeout({ implicit: 0 });
+
+            const ret = func();
+            browser.setTimeout({ implicit: 8000 });
+            return ret;
+        }
+
+        browser.addCommand('$z', function (selector) {
+            return withNoImplicitTimeouts(() => browser.$(selector));
+        });
+    },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
