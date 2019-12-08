@@ -9,6 +9,8 @@ exports.config = {
     runner: 'local',
     //
     // Override default path ('/wd/hub') for chromedriver service.
+    hostname: 'localhost',
+    port: 4445,
     path: '/wd/hub',
     //
     // ==================
@@ -126,7 +128,7 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        timeout: 3000
     },
     //
     // =====
